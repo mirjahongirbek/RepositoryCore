@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace RepositoryCore.Interfaces
 {
-public  interface IRepositoryCore<T, TKey>
-  where T : IEntity<TKey>
+    public  interface IRepositoryCore<T, TKey>
+  where T :class, IEntity<TKey>
     {
         Type GetGenericType();
         //Get we can search Cache too
@@ -135,7 +135,7 @@ public  interface IRepositoryCore<T, TKey>
 
         // Delete Entitys from database with cache
 
-        #region Delate
+        #region Delete
 
         /// <summary>
         ///     Delete by Id
@@ -149,7 +149,7 @@ public  interface IRepositoryCore<T, TKey>
         /// <param name="model"></param>
         /// <param name="lineNumber"></param>
         /// <param name="caller"></param>
-        T Delate(T model);
+        T Delete(T model);
 
         /// <summary>
         ///     Delete async geved model
@@ -158,7 +158,7 @@ public  interface IRepositoryCore<T, TKey>
         /// <param name="lineNumber"></param>
         /// <param name="caller"></param>
         /// <returns></returns>
-        Task<T> DelateAsync(T model);
+        Task<T> DeleteAsync(T model);
 
         ///
         bool DeleteMany(Expression<Func<T, bool>> expression);
@@ -349,25 +349,7 @@ public  interface IRepositoryCore<T, TKey>
 
         #endregion
 
-        #region
-
-        /// <summary>
-        /// </summary>
-        /// <param name="functinname"></param>
-        /// <param name="item"></param>
-        /// <param name="lineNumber"></param>
-        /// <param name="caller"></param>
-        /// <returns></returns>
-        T CalProcedure(string functinname, object[] item);
-
-        /// <summary>
-        /// </summary>
-        /// <param name="str"></param>
-        /// <param name="lineNumber"></param>
-        /// <param name="caller"></param>
-        /// <returns></returns>
-        IEnumerable<T> CallProcedure(string str);
-        #endregion
+   
 
         // it is new Functionch
 
