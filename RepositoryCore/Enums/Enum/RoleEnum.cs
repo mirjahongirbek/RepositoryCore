@@ -3,13 +3,14 @@ namespace RepositoryCore.Enums.Enum
 {
     public enum RoleEnum
     {
-        Admin = 0,
+        All= 0,
+        Admin,
         Moderator,
         Create,
         Read,
         Update,
         Delete,
-        All,
-        Edit
+        Edit,
+
     }
 }

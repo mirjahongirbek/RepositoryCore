@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -10,11 +11,12 @@ namespace RepositoryCore.CoreState
 
         public static string GetHashString(string inputString)
         {
-            var sb = new StringBuilder();
-            foreach (var b in GetHash(inputString))
-                sb.Append(b.ToString("X2"));
+            //var sb = new StringBuilder();
+            //foreach (var b in GetHash(inputString))
+            //    sb.Append(b.ToString("X2"));
 
-            return sb.ToString();
+            //return sb.ToString();
+            return inputString;
         }
         public static bool IsPhoneNumber(string number)
         {
@@ -53,7 +55,15 @@ namespace RepositoryCore.CoreState
         {
             get => CultureInfo.GetCultures(CultureTypes.AllCultures & ~CultureTypes.NeutralCultures);
         }
+         public static bool IsWindows() =>
+                RuntimeInformation.IsOSPlatform(OSPlatform.Windows);
 
+         public static bool IsMacOS() =>
+                RuntimeInformation.IsOSPlatform(OSPlatform.OSX);
+
+         public static bool IsLinux() =>
+                RuntimeInformation.IsOSPlatform(OSPlatform.Linux);
+      
         #region Private
         private static byte[] GetHash(string inputString)
         {

@@ -39,6 +39,7 @@ namespace RepositoryCore.Interfaces
         /// <param name="caller"></param>
         /// <returns></returns>
         T GetFirst(Expression<Func<T, bool>> expression);
+        T GetLast(Expression<Func<T, bool>> expression);
 
         /// <summary>
         ///     simular but async
@@ -240,6 +241,7 @@ namespace RepositoryCore.Interfaces
         /// <param name="caller"></param>
         /// <returns></returns>
         IEnumerable<T> FindReverse(Expression<Func<T, bool>> selector);
+        IEnumerable<T> FindReverse(Expression<Func<T, bool>> selector, int offset, int limit);
 
         /// <summary>
         /// </summary>
