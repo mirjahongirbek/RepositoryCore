@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 namespace RepositoryCore.Result
 {
@@ -17,11 +16,6 @@ namespace RepositoryCore.Result
 
         }   
     }
-    public class ResponseData
-    {
-        public object result { get; set; }
-        public int code { get; set; }
-        public object error { get; set; }
-    }
+  
 
 }

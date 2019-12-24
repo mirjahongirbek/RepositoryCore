@@ -1,21 +1,21 @@
 ﻿
 namespace RepositoryCore.Exceptions
 {
-    public class MyException : System.Exception
+    public class CoreException : System.Exception
     {
-        public MyException(string message):base(message)
+        public CoreException(string message):base(message)
         {
             Message = message;
         }
-        public MyException(string message, int id):base(message)
+        public CoreException(string message, int id):base(message)
         {
             Id = id;
         }
-        public MyException(int id)
+        public CoreException(int id)
         {
             Id = id;
         }
-        public MyException(string message, string token):base(message)
+        public CoreException(string message, string token):base(message)
         {
             Token = token;
         }
