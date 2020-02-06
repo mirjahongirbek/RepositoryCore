@@ -3,11 +3,11 @@ namespace RepositoryCore.Exceptions
 {
     public class CoreException : System.Exception
     {
-        public CoreException(string message):base(message)
+        public CoreException(string message) : base(message)
         {
             Message = message;
         }
-        public CoreException(string message, int id):base(message)
+        public CoreException(string message, int id) : base(message)
         {
             Id = id;
         }
@@ -15,11 +15,11 @@ namespace RepositoryCore.Exceptions
         {
             Id = id;
         }
-        public CoreException(string message, string token):base(message)
+        public CoreException(string message, string token) : base(message)
         {
             Token = token;
         }
-    public string Message { get; }
+        public string Message { get; }
         public int Id { get; }
         public string Token { get; }
     }

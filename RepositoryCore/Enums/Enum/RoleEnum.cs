@@ -13,4 +13,13 @@ namespace RepositoryCore.Enums.Enum
         Edit,
 
     }
+    public enum TableStatus
+    {
+        Default,
+        Created,
+        Active,
+        Deleted,
+        Update,
+
+    }
 }

@@ -1,5 +1,6 @@
 ﻿namespace RepositoryCore.Enums
 {
+
     public enum StatusCore
     {/// <summary>
      /// Serfice Not Found
